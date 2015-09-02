@@ -33,6 +33,11 @@
 	$pdf->setPrintFooter(false);
 	#$pdf->AliasNbPages();
 	$pdf->AddPage();
+	$pdf->SetFont("times", "R", 34);
+	$pdf->Cell(0,5,"",0,1);
+	$pdf->Cell(0,0,"IMMACULATE HEART CHURCH",0,1,'C');
+	$pdf->SetFont("times", "B", 9);
+	$pdf->Cell(0,0,"KALENA AGRAHARA, BANGALORE",0,1,'C');
 	$pdf->SetFont("times", "R", 22);
 	$pdf->Cell(0,5,"",0,1);
 	$pdf->Cell(0,0,"BAPTISM CERTIFICATE",0,1,'C');
@@ -69,8 +74,8 @@ function show_field($pdf, $label, $value) {
 	show_field($pdf, "name of godmother", $baptism->godmothers_name);
 	show_field($pdf, "residence", $baptism->residence);
 	show_field($pdf, "minister of baptism", $baptism->minister);
-	show_field($pdf, "confirmed on", $baptism->confirmation_dt);
-	show_field($pdf, "married to", $baptism->marriage_dt);
+	show_field($pdf, "confirmed Date", $baptism->confirmation_dt);
+	show_field($pdf, "married Date", $baptism->marriage_dt);
 	show_field($pdf, "remarks", $baptism->remarks);
 	draw_line($pdf);
 
